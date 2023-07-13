@@ -17,6 +17,7 @@ import { AreaComponent } from './widgets/area/area.component';
 import { CardComponent } from './widgets/card/card.component';
 import { PieComponent } from './widgets/pie/pie.component'
 import { HighchartsChartModule } from 'highcharts-angular';
+import {MatTableModule} from '@angular/material/table';
 
 
 
@@ -41,7 +42,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
     MatMenuModule,
     RouterModule,
     MatListModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+    MatTableModule
   
     
   ],

@@ -5,7 +5,7 @@ import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { ProductsComponent } from './modules/products/products.component';
 import { PurchasesComponent } from './modules/purchases/purchases.component';
 import { CategoriesComponent } from './modules/categories/categories.component';
-//import { DepartmentsComponent } from './modules/departments/departments.component';
+import { DepartmentsComponent } from './modules/departments/departments.component';
 
 const routes: Routes = [{
   path:'',
@@ -27,7 +27,7 @@ const routes: Routes = [{
    },
    {
     path: 'departments',
-    component:DashboardComponent
+    component:DepartmentsComponent
    }
 ]}
 ];
