@@ -7,13 +7,14 @@ import { ProductsComponent } from 'src/app/modules/products/products.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import{  MatSidenavModule} from '@angular/material/sidenav'
 import {MatDividerModule} from '@angular/material/divider';
-import {  MatTableModule } from '@angular/material/table';
+import {  MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import{ MatCardModule} from '@angular/material/card'
 import { CategoriesComponent } from 'src/app/modules/categories/categories.component';
 import { PurchasesComponent } from 'src/app/modules/purchases/purchases.component';
 import { DepartmentsComponent } from 'src/app/modules/departments/departments.component';
+
 
 
 
@@ -39,7 +40,11 @@ import { DepartmentsComponent } from 'src/app/modules/departments/departments.co
     MatCardModule,
     FlexLayoutModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatTableModule,
+    
+    
+    
   
   ],
   // providers: [

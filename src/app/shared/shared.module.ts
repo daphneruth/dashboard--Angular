@@ -10,7 +10,6 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
-
 import{MatListModule}from "@angular/material/list";
 
 import { AreaComponent } from './widgets/area/area.component';
@@ -18,6 +17,7 @@ import { CardComponent } from './widgets/card/card.component';
 import { PieComponent } from './widgets/pie/pie.component'
 import { HighchartsChartModule } from 'highcharts-angular';
 import {MatTableModule} from '@angular/material/table';
+
 
 
 
@@ -43,7 +43,8 @@ import {MatTableModule} from '@angular/material/table';
     RouterModule,
     MatListModule,
     HighchartsChartModule,
-    MatTableModule
+    MatTableModule,
+    
   
     
   ],

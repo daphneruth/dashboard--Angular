@@ -5,31 +5,27 @@ import { Component } from '@angular/core';
 export interface PeriodicElement {
   name: string;
   position: number;
-  weight: number;
-  symbol: string;
+  description:string
+   price:number;
+  quantity:number;
+  category:string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+  {position: 1, name: 'Laptop',  description:"MacBook",price:8900, quantity: 10, category: 'Electronics'},
+  {position: 2, name: 'Desktop', description:"Dell",price:8900, quantity: 15, category: 'Electronics'},
+  {position: 4, name: 'Smartphone',description:"Samsung",price:8900,quantity: 20, category: 'Electronics'},
+  {position: 5, name: 'Monitor', description:"Curved",price:8900, quantity: 8, category: 'Electronics'},
 ];
-
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss'],
-  standalone: true,
+  standalone: false,
 
 })
-export class TableBasicExample {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+export class ProductsComponent {
+  displayedColumns: string[] = ['position', 'name', 'description', 'price', 'quantity', 'category'];
+
   dataSource = ELEMENT_DATA;
 }
