@@ -2,12 +2,13 @@
     .mat-icon{
         vertical-align: middle;
         margin-right: 5px;
+        color: blue;
     }
 }
 
 .profile-card{
-    text-align: left;
-    padding:0 10px 20px 10px;
+    text-align: center;
+    padding: 5px 10px 10px 10px;
     img {
         width: 100px;
         height: 100px;
@@ -15,6 +16,6 @@
         border-radius: 50%;
     }
 }
-.white-icon {
-    color: blue;
-}
+// .white-icon {
+//     color: blue;
+// }

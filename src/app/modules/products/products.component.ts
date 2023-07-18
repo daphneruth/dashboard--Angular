@@ -14,8 +14,12 @@ export interface PeriodicElement {
 const ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, name: 'Laptop',  description:"MacBook",price:8900, quantity: 10, category: 'Electronics'},
   {position: 2, name: 'Desktop', description:"Dell",price:8900, quantity: 15, category: 'Electronics'},
-  {position: 4, name: 'Smartphone',description:"Samsung",price:8900,quantity: 20, category: 'Electronics'},
-  {position: 5, name: 'Monitor', description:"Curved",price:8900, quantity: 8, category: 'Electronics'},
+  {position: 3, name: 'Smartphone',description:"Samsung",price:8900,quantity: 20, category: 'Electronics'},
+  {position: 4, name: 'Monitor', description:"Curved",price:8900, quantity: 8, category: 'Electronics'},
+  {position: 5, name: 'Laptop',  description:"MacBook",price:8900, quantity: 10, category: 'Electronics'},
+  {position: 6, name: 'Desktop', description:"Dell",price:8900, quantity: 15, category: 'Electronics'},
+  {position: 7, name: 'Smartphone',description:"Samsung",price:8900,quantity: 20, category: 'Electronics'},
+  {position: 8, name: 'Monitor', description:"Curved",price:8900, quantity: 8, category: 'Electronics'},
 ];
 @Component({
   selector: 'app-products',

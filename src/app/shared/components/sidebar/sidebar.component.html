@@ -3,25 +3,29 @@
     <!-- <div class="header"></div> -->
     <img
      
-      src="https://img.freepik.com/premium-vector/avatar-profile-icon_188544-4755.jpg?w=740" alt="image"
+      src="https://img.freepik.com/free-photo/user-profile-icon-front-side_187299-39596.jpg?w=740&t=st=1689326944~exp=1689327544~hmac=1a1b1da5c0b7a79cdd3a6a907b6bc720cdb44ccf7aec7dbb850e7da69fff88c3" alt="image"
     />
   </div>
 
-  <div>
+  <div >
     <h2 mat-subheader>Pages</h2>
     <mat-divider></mat-divider>
 
-     <a  mat-list-item routerLinkActive="list-item-active" routerLink="/"
+     <a  mat-list-item routerLinkActive="list-item-active" routerLink="/" 
       ><mat-icon class="white-icon">dashboard</mat-icon>Dashboard</a
     >
     
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/products"
       ><mat-icon class="white-icon">dashboard</mat-icon>Products</a
     >
+    <a   mat-list-item routerLinkActive="list-item-active" routerLink="/categories" >
+      <mat-icon class="white-icon">dashboard</mat-icon>Categories
+  </a>
   
+<!--   
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/categories"
       ><mat-icon class="white-icon">dashboard</mat-icon>Categories</a
-    >
+    > -->
 
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/purchases"
       ><mat-icon class="white-icon">dashboard</mat-icon>Purchases</a
@@ -31,6 +35,6 @@
       ><mat-icon class="white-icon">dashboard</mat-icon>Departments</a
     >
   </div>
-  <mat-divider></mat-divider>
+  
   
 </mat-nav-list>

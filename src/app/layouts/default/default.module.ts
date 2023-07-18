@@ -14,7 +14,8 @@ import{ MatCardModule} from '@angular/material/card'
 import { CategoriesComponent } from 'src/app/modules/categories/categories.component';
 import { PurchasesComponent } from 'src/app/modules/purchases/purchases.component';
 import { DepartmentsComponent } from 'src/app/modules/departments/departments.component';
-
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 
@@ -42,7 +43,8 @@ import { DepartmentsComponent } from 'src/app/modules/departments/departments.co
     MatTableModule,
     MatPaginatorModule,
     MatTableModule,
-    
+    MatInputModule,
+    MatFormFieldModule
     
     
   
