@@ -29,7 +29,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 })
 export class ProductsComponent {
-  displayedColumns: string[] = ['position', 'name', 'description', 'price', 'quantity', 'category'];
+  displayedColumns: string[] = ['position', 'name', 'description', 'price', 'quantity', 'category', 'Action'];
 
   dataSource = ELEMENT_DATA;
 }

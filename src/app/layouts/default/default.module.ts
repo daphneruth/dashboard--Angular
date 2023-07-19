@@ -16,7 +16,8 @@ import { PurchasesComponent } from 'src/app/modules/purchases/purchases.componen
 import { DepartmentsComponent } from 'src/app/modules/departments/departments.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -44,14 +45,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatPaginatorModule,
     MatTableModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatIconModule,
+    MatButtonModule
     
     
   
   ],
-  // providers: [
-  //   DashboardService
-  // ]
-
+ 
 })
 export class DefaultModule { }

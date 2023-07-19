@@ -64,7 +64,7 @@ const NAMES: string[] = [
   styleUrls: ['./departments.component.scss']
 })
 export class DepartmentsComponent implements AfterViewInit {
-  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
+  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit','action'];
   dataSource: MatTableDataSource<UserData>;
 
   @ViewChild(MatPaginator)
