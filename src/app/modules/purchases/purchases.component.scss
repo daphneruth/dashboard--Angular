@@ -1,4 +1,11 @@
-
+.main-body {
+  padding-top: 20px;
+  margin: 0 auto;
+  max-width: 1348px;
+  mat-form-field {
+    width: 100%;
+  }
+}
 
 table {
     width: 100%;
@@ -12,9 +19,9 @@ table {
     
   }
   
-  td, th {
-    width: 22%;
-  }
+  // td, th {
+  //   width: 22%;
+  // }
   .action {
     display: flex;
     gap: 5px;

@@ -1,53 +1,50 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
-
+import { PurchaseComponent } from 'src/app/crud/purchase/purchase.component';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { PurchasesService } from 'src/app/Services/purchases.service';
 
 
 // export class DepartmentsComponent {
 
 // }
-export interface UserData {
-  id: string;
-  name: string;
-  progress: string;
-  fruit: string;
-}
 
-/** Constants used to fill up our data base. */
-const FRUITS: string[] = [
-  'blueberry',
-  'lychee',
-  'kiwi',
-  'mango',
-  'peach',
-  'lime',
-  'pomegranate',
-  'pineapple',
-];
-const NAMES: string[] = [
-  'Maia',
-  'Asher',
-  'Olivia',
-  'Atticus',
-  'Amelia',
-  'Jack',
-  'Charlotte',
-  'Theodore',
-  'Isla',
-  'Oliver',
-  'Isabella',
-  'Jasper',
-  'Cora',
-  'Levi',
-  'Violet',
-  'Arthur',
-  'Mia',
-  'Thomas',
-  'Elizabeth',
-];
+
+// /** Constants used to fill up our data base. */
+// const FRUITS: string[] = [
+//   'blueberry',
+//   'lychee',
+//   'kiwi',
+//   'mango',
+//   'peach',
+//   'lime',
+//   'pomegranate',
+//   'pineapple',
+// ];
+// const NAMES: string[] = [
+//   'Maia',
+//   'Asher',
+//   'Olivia',
+//   'Atticus',
+//   'Amelia',
+//   'Jack',
+//   'Charlotte',
+//   'Theodore',
+//   'Isla',
+//   'Oliver',
+//   'Isabella',
+//   'Jasper',
+//   'Cora',
+//   'Levi',
+//   'Violet',
+//   'Arthur',
+//   'Mia',
+//   'Thomas',
+//   'Elizabeth',
+// ];
 
 /**
  * @title Data table with sorting, pagination, and filtering.
@@ -65,26 +62,55 @@ const NAMES: string[] = [
   templateUrl: './purchases.component.html',
   styleUrls: ['./purchases.component.scss']
 })
-export class PurchasesComponent implements AfterViewInit {
-  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit','Action'];
-  dataSource: MatTableDataSource<UserData>;
+export class PurchasesComponent implements OnInit {
+  displayedColumns: string[] = [
+    'id',
+    'firstName',
+    'lastName',
+    'email',
+    'dob',
+    'gender',
+    'education',
+    'company',
+    'experience',
+    'package',
+    'action',
+  ];
+  dataSource!: MatTableDataSource<any>;
 
-  @ViewChild(MatPaginator)
-  paginator!: MatPaginator
-  @ViewChild(MatSort)
-  sort!: MatSort 
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
-  constructor() {
-    // Create 100 users
-    const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
+  constructor(
+    private _dialog: MatDialog,
+    private _purchaseService: PurchasesService
+    
+  ) {}
 
-    // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users);
+  ngOnInit(): void {
+    this.getEmployeeList();
   }
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+  openPurchaseForm() {
+    const dialogRef = this._dialog.open(PurchaseComponent);
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if (val) {
+          this.getEmployeeList();
+        }
+      },
+    });
+  }
+
+  getEmployeeList() {
+    this._purchaseService.getEmployeeList().subscribe({
+      next: (res) => {
+        this.dataSource = new MatTableDataSource(res);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
+      },
+      error: console.log,
+    });
   }
 
   applyFilter(event: Event) {
@@ -95,20 +121,41 @@ export class PurchasesComponent implements AfterViewInit {
       this.dataSource.paginator.firstPage();
     }
   }
-}
 
-/** Builds and returns a new User. */
-function createNewUser(id: number): UserData {
-  const name =
-    NAMES[Math.round(Math.random() * (NAMES.length - 1))] +
-    ' ' +
-    NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) +
-    '.';
+  deleteEmployee(id: number) {
+    this._purchaseService.deleteEmployee(id).subscribe({
+      next: (res) => {
+        //this._coreService.openSnackBar('Employee deleted!', 'done');
+        this.getEmployeeList();
+        console.log("deleted")
+      },
+      error: console.log,
+    });
+  }
 
-  return {
-    id: id.toString(),
-    name: name,
-    progress: Math.round(Math.random() * 100).toString(),
-    fruit: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))],
-  };
+  // openPurchaseForm() {
+  //   const dialogRef = this._dialog.open(PurchasesComponent)
+    
+
+  //   dialogRef.afterClosed().subscribe({
+  //     next: (val) => {
+  //       if (val) {
+  //         this.getEmployeeList();
+  //       }
+  //     },
+  //   });
+  // }
+  openEditForm(data: any) {
+    const dialogRef = this._dialog.open(PurchaseComponent, {
+      data,
+    });
+
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if (val) {
+          this.getEmployeeList();
+        }
+      },
+    });
+  }
 }
