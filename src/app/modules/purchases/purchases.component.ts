@@ -8,54 +8,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { PurchasesService } from 'src/app/Services/purchases.service';
 
 
-// export class DepartmentsComponent {
 
-// }
-
-
-// /** Constants used to fill up our data base. */
-// const FRUITS: string[] = [
-//   'blueberry',
-//   'lychee',
-//   'kiwi',
-//   'mango',
-//   'peach',
-//   'lime',
-//   'pomegranate',
-//   'pineapple',
-// ];
-// const NAMES: string[] = [
-//   'Maia',
-//   'Asher',
-//   'Olivia',
-//   'Atticus',
-//   'Amelia',
-//   'Jack',
-//   'Charlotte',
-//   'Theodore',
-//   'Isla',
-//   'Oliver',
-//   'Isabella',
-//   'Jasper',
-//   'Cora',
-//   'Levi',
-//   'Violet',
-//   'Arthur',
-//   'Mia',
-//   'Thomas',
-//   'Elizabeth',
-// ];
-
-/**
- * @title Data table with sorting, pagination, and filtering.
-//  */
-// @Component({
-//   selector: 'table-overview-example',
-//   styleUrls: ['table-overview-example.css'],
-//   templateUrl: 'table-overview-example.html',
-//   standalone: false,
-  
-// })
 
 @Component({
   selector: 'app-purchases',
@@ -70,7 +23,7 @@ export class PurchasesComponent implements OnInit {
     'email',
     'dob',
     'gender',
-    'education',
+    
     'company',
     'experience',
     'package',
@@ -133,18 +86,7 @@ export class PurchasesComponent implements OnInit {
     });
   }
 
-  // openPurchaseForm() {
-  //   const dialogRef = this._dialog.open(PurchasesComponent)
-    
 
-  //   dialogRef.afterClosed().subscribe({
-  //     next: (val) => {
-  //       if (val) {
-  //         this.getEmployeeList();
-  //       }
-  //     },
-  //   });
-  // }
   openEditForm(data: any) {
     const dialogRef = this._dialog.open(PurchaseComponent, {
       data,
